@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Mess Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>MessMate</h1>
+            <ul>
+                <li><a href="#booking-section">Meal Booking</a></li>
+                <li><a href="#feedback-section">Feedback</a></li>
+                <li><a href="#" id="admin-login-btn">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="booking-section">
+            <h2>Book Your Meal 📅</h2>
+            <div class="meal-schedule" id="student-meal-schedule">
+                <p>Loading today's menu...</p>
+            </div>
+            <div class="booking-form">
+                <select id="day-select">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+                <select id="meal-select">
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                </select>
+                <button id="book-meal-btn">Book Meal</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="feedback-section">
+            <h2>Leave Your Feedback 📝</h2>
+            <form id="feedback-form">
+                <input type="text" placeholder="Your Name" required>
+                <textarea placeholder="Your valuable feedback..." rows="5" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="admin-panel" class="hidden">
+        <div class="admin-container">
+            <span id="close-admin-btn">&times;</span>
+            <h2>Admin Dashboard</h2>
+            
+            <div class="admin-feature">
+                <h3>Set Weekly Meal Schedule</h3>
+                <form id="schedule-form">
+                    <select id="admin-day-select">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+                    <input type="text" id="breakfast-item" placeholder="Breakfast Menu" required>
+                    <input type="text" id="lunch-item" placeholder="Lunch Menu" required>
+                    <input type="text" id="dinner-item" placeholder="Dinner Menu" required>
+                    <button type="submit">Set Schedule</button>
+                </form>
+            </div>
+            
+            <div class="admin-feature">
+                <h3>Monthly Reports</h3>
+                <p>View total meals booked and feedback received.</p>
+                <div class="report-data">
+                    <p><strong>Total Bookings this Month:</strong> <span id="total-bookings">0</span></p>
+                    <p><strong>Feedback Submissions:</strong> <span id="total-feedback">0</span></p>
+                </div>
+                <button id="generate-report-btn">Generate Report</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
